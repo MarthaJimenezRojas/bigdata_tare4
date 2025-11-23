@@ -1,7 +1,7 @@
 #### Universidad Nacional Abierta y a Distancia – UNAD
 #### BigData – Tarea 4: Almacenamiento y Consultas de Datos en Big Data
 #### Por: Martha Jimenez Rojas
-
+---
 
 ### Descripción del proyecto
 
@@ -15,17 +15,17 @@ El caso de uso propuesto consiste en una plataforma institucional para la consul
 MongoDB es ideal para este caso porque permite almacenar cada subsidio como un documento independiente, manejar datos semiestructurados provenientes de archivos CSV y ejecutar consultas analíticas mediante el Aggregation Pipeline. Además, soporta grandes volúmenes de información y consultas dinámicas, características necesarias para un sistema de análisis de datos públicos en el contexto de vivienda.
 
 
-### Contenido del repositorio
-
-#### 1. Dataset utilizado
-
-Subsidios_De_Vivienda_Asignados_20251122.csv
-
-Contiene los datos utilizados para poblar la base de datos en MongoDB. Es el archivo base empleado para la carga inicial de registros.
-
-#### 2. Archivo de consultas
-
-consultas_subsidios_vivienda
-
-Contiene todas las consultas implementadas en MongoDB Compass, las cuales están escritas en MongoDB Query Language (MQL) y se ejecutaron directamente en MongoDB Compass sin scripts externos.
+  ### Contenido del repositorio
+  
+  #### 1. Dataset utilizado
+  
+  Subsidios_De_Vivienda_Asignados_20251122.csv
+  
+  Contiene los datos utilizados para poblar la base de datos en MongoDB. Es el archivo base empleado para la carga inicial de registros.
+  
+  #### 2. Archivo de consultas
+  
+  consultas_subsidios_vivienda
+  
+  Contiene todas las consultas implementadas en MongoDB Compass, las cuales están escritas en MongoDB Query Language (MQL) y se ejecutaron directamente en MongoDB Compass sin scripts externos.
 
