@@ -1,11 +1,12 @@
-### Universidad Nacional Abierta y a Distancia – UNAD
-### BigData – Tarea 4: Almacenamiento y Consultas de Datos en Big Data
+#### Universidad Nacional Abierta y a Distancia – UNAD
+#### BigData – Tarea 4: Almacenamiento y Consultas de Datos en Big Data
 #### Por: Martha Jimenez Rojas
 
 
 ### Descripción del proyecto
 
 Este repositorio contiene el desarrollo de la implementación MongoDB correspondiente a la Tarea 4 del curso Big Data. Aquí se incluye el caso de uso, el dataset utilizado y el archivo donde se encuentran las consultas realizadas.
+
 
 ### Caso de uso
 
@@ -17,11 +18,14 @@ MongoDB es ideal para este caso porque permite almacenar cada subsidio como un d
 ### Contenido del repositorio
 
 #### 1. Dataset utilizado
+
 Subsidios_De_Vivienda_Asignados_20251122.csv
+
 Contiene los datos utilizados para poblar la base de datos en MongoDB. Es el archivo base empleado para la carga inicial de registros.
 
 #### 2. Archivo de consultas
 
-consultas_subsidios_vivienda.txt
+consultas_subsidios_vivienda
+
 Contiene todas las consultas implementadas en MongoDB Compass, las cuales están escritas en MongoDB Query Language (MQL) y se ejecutaron directamente en MongoDB Compass sin scripts externos.
 
