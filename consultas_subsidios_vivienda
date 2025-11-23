@@ -1,20 +1,4 @@
-este seria el archivo donde voy a poner las consutlas que estoy haciendo y alli mismo como paa que quede mas pro, o no se si en un readme, toca preungtarle a la ia
-pero de forma reusmida pongo como elc aso de estudio relacionado al dataset que estoy usando
-y la consultas, y como en tipo comentario una explicacion super sencilla de para es la consulta, osea como comentar.
-
-# ================================================
-# Tarea 3 - Procesamiento Batch con Spark
-# Por: Martha Y. Jimenez Rojas
-# Análisis del dataset de Seguridad Alimentaria - Casanare
-# ================================================
-
-EN EL README PONER QUE EN EL ARCHIVO CONSULTAS_SUBSIDIOS_VIVIENDA SE ENCUTRNA  XXXXXX
-
-
-
-
-
-
+CONSULTAS IMPLEMENTACION MONGODB
 
 ### Consulta 1 - Registros donde el campo “Año de Asignación” tenga el valor "2,003" y el campo “Municipio” sea "LETICIA"
 
