@@ -8,6 +8,12 @@ y la consultas, y como en tipo comentario una explicacion super sencilla de para
 # Análisis del dataset de Seguridad Alimentaria - Casanare
 # ================================================
 
+EN EL README PONER QUE EN EL ARCHIVO CONSULTAS_SUBSIDIOS_VIVIENDA SE ENCUTRNA  XXXXXX
+
+
+
+
+
 
 
 ### Consulta 1 - Registros donde el campo “Año de Asignación” tenga el valor "2,003" y el campo “Municipio” sea "LETICIA"
@@ -16,7 +22,7 @@ y la consultas, y como en tipo comentario una explicacion super sencilla de para
 
 
 
-### Consulta 2 - 
+### Consulta 2 - Registros de los subsidios registrados en el departamento de AMAZONAS, si su estado de postulación contiene la palabra “Apto”.
 
 {
   $and: [
@@ -24,3 +30,43 @@ y la consultas, y como en tipo comentario una explicacion super sencilla de para
     { "Estado de Postulación": { $regex: "Apto", $options: "i" } }
   ]
 }
+
+
+
+### Consulta 3 - Registros de los subsidios asignados en el departamento de Casanare, si el año de asignación es del 2020 o superior, 
+y si el programa contiene las palabras “Gratuita” o “Territorial”.
+
+{
+  "$and": [
+    { "Departamento": "CASANARE" },
+    { "Año de Asignación": { "$gte": "2,020" } },
+    { "Programa": { "$regex": "Gratuita|Territorial", "$options": "i" } }
+  ]
+}
+
+
+### Consulta 4 - Insertar un solo Documento
+  {
+    "Departamento": "CASANARE",
+    "Municipio": "SABANALARGA",
+    "Programa": "Bolsa Territorial",
+    "Modalidad": "VIS",
+    "Año de Asignación": "2,025",
+    "Estado de Postulación": "Asignados",
+    "Hogares": "40",
+    "Valor Asignado": "$10,500,000.00"
+  }
+
+
+### Consulta 5 - Actualizar un solo Documento (estado de postulación)
+
+Filter
+{"Valor Asignado": "$10,500,000.00"}
+
+Update
+{ "$set": { "Estado de Postulación": "Rechazado" } }
+
+
+
+
+
