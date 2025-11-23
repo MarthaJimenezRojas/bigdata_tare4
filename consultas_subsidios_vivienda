@@ -68,7 +68,7 @@ Update
 
 
 
-### Agregación – Número total de subsidios otorgados por departamento
+### Agregación 1 – Número total de subsidios otorgados por departamento
 [
   {
     $addFields: {
@@ -102,7 +102,7 @@ Update
 
 
 
-###  Agregación – Total de subsidios por año de asignación
+###  Agregación 2 – Total de subsidios por año de asignación
 [
   {
     $addFields: {
@@ -141,7 +141,7 @@ Update
 
 
 
-### Agregación - Comparación de subsidios entre 2004 y 2025 en Casanare
+### Agregación 3 - Comparación de subsidios entre 2004 y 2025 en Casanare
 [
   {
     "$addFields": {
