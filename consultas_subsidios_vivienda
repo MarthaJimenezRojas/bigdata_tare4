@@ -68,5 +68,139 @@ Update
 
 
 
+### Agregación – Número total de subsidios otorgados por departamento
+[
+  {
+    $addFields: {
+      hogares_int: {
+        $toInt: {
+          $replaceAll: {
+            input: {
+              $toString: "$Hogares"
+            },
+            find: ",",
+            replacement: ""
+          }
+        }
+      }
+    }
+  },
+  {
+    $group: {
+      _id: "$Departamento",
+      total_subsidios: {
+        $sum: "$hogares_int"
+      }
+    }
+  },
+  {
+    $sort: {
+      total_subsidios: -1
+    }
+  }
+]
 
 
+
+###  Agregación – Total de subsidios por año de asignación
+[
+  {
+    $addFields: {
+      anio_int: {
+        $toInt: {
+          $replaceAll: {
+            input: {
+              $toString: "$Año de Asignación"
+            },
+            find: ",",
+            replacement: ""
+          }
+        }
+      },
+      hogares_int: {
+        $toInt: {
+          $replaceAll: {
+            input: { $toString: "$Hogares" },
+            find: ",",
+            replacement: ""
+          }
+        }
+      }
+    }
+  },
+  {
+    $group: {
+      _id: "$anio_int",
+      total_subsidios: { $sum: "$hogares_int" }
+    }
+  },
+  {
+    $sort: { _id: 1 }
+  }
+]
+
+
+
+### Agregación - Comparación de subsidios entre 2004 y 2025 en Casanare
+[
+  {
+    "$addFields": {
+      "anio_int": {
+        "$toInt": {
+          "$replaceAll": {
+            "input": { "$toString": "$Año de Asignación" },
+            "find": ",",
+            "replacement": ""
+          }
+        }
+      },
+      "hogares_int": {
+        "$toInt": {
+          "$replaceAll": {
+            "input": { "$toString": "$Hogares" },
+            "find": ",",
+            "replacement": ""
+          }
+        }
+      }
+    }
+  },
+  {
+    "$match": {
+      "Departamento": "CASANARE",
+      "anio_int": { "$in": [2004, 2025] }
+    }
+  },
+  {
+    "$group": {
+      "_id": "$anio_int",
+      "total_subsidios": { "$sum": "$hogares_int" }
+    }
+  },
+  {
+    "$sort": { "_id": 1 }
+  },
+  {
+    "$group": {
+      "_id": null,
+      "years": { "$push": "$_id" },
+      "totales": { "$push": "$total_subsidios" }
+    }
+  },
+  {
+    "$project": {
+      "years": 1,
+      "totales": 1,
+      "diferencia": {
+        "$cond": [
+          { "$eq": [{ "$size": "$totales" }, 2] },
+          { "$subtract": [
+              { "$arrayElemAt": ["$totales", 1] },
+              { "$arrayElemAt": ["$totales", 0] }
+          ]},
+          "Uno de los años no tiene registros"
+        ]
+      }
+    }
+  }
+]
